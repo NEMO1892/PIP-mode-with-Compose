@@ -8,15 +8,12 @@ import androidx.activity.viewModels
 
 class MainActivity : ComponentActivity() {
 
-    private val viewModel by viewModels<PlayerViewModel>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             VideoScreen(
                 videoUrl = EXAMPLE_VIDEO_URI,
-                viewModel = viewModel
             )
         }
     }
