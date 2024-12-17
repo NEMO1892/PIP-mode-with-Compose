@@ -4,44 +4,26 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.pipmodecompose.ui.theme.PIPModeComposeTheme
+import androidx.activity.viewModels
 
 class MainActivity : ComponentActivity() {
+
+    private val viewModel by viewModels<PlayerViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PIPModeComposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            VideoScreen(
+                videoUrl = EXAMPLE_VIDEO_URI,
+                viewModel = viewModel
+            )
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    private companion object {
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PIPModeComposeTheme {
-        Greeting("Android")
+        const val EXAMPLE_VIDEO_URI =
+            "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
     }
 }
