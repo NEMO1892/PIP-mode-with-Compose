@@ -16,3 +16,5 @@ local.properties
 /gradle/wrapper/gradle-wrapper.jar
 /gradlew
 /gradlew.bat
+/.idea/deviceManager.xml
+/.idea/vcs.xml
