@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PIP mode compose</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="retry">Retry</string>
+    <string name="seek_forward">Seek forward</string>
+    <string name="seek_back">Seek back</string>
 </resources>
